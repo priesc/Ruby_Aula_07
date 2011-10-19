@@ -2,7 +2,12 @@
 
 <p>
   <b>Cnpf cpf:</b>
-  <%= @fornecedor.cnpf_cpf %>
+  <%= @fornecedor.nome %>
+  <% if @fornecedor.pj? %>
+  <%= @fornecedor.cnpj %>
+  <% else %>
+  <%= @fornecedor.cpf %>
+  <% end %>
 </p>
 
 

@@ -28,9 +28,14 @@ require 'spec_helper'
 			Fornecedor.new(nome: 'Apple').should be_invalid
 		end
 
-		it "obriga cnpj se é pj" do
+		it "verifica cnpj quando for PJ" do
 			Fornecedor.new(nome: 'Julio', pj:true, cnpj: '00000000000191').should be_valid
-			Fornecedor.new(nome: 'Julio', pj:true, cpf: '01368739105').should be_invalid
+			Fornecedor.new(nome: 'Julio', pj:true, cpf: '01368739105 		').should be_invalid
+		end
+
+		it "verifica CPF quando for PF" do
+			Fornecedor.new(nome: 'Julio', pj:false, cnpj: '00000000000191').should be_invalid
+			Fornecedor.new(nome: 'Julio', pj:false, cpf: '01368739105 		').should be_valid
 		end
 
 	end

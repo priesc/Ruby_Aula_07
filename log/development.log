@@ -2232,3 +2232,2033 @@ Migrating to SepararCpfCnpj (20111017120036)
   [1m[36m (112.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111010115521')[0m
   [1m[35m (120.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111010144928')
   [1m[36m (137.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111010145956')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-19 07:53:12 -0300
+  Processing by HomeController#index as HTML
+Completed   in 1ms
+
+
+Started GET "/usuarios/sign_in" for 127.0.0.1 at 2011-10-19 07:53:13 -0300
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (2.2ms)
+Rendered devise/sessions/new.html.erb within layouts/application (179.6ms)
+Completed 200 OK in 914ms (Views: 521.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 07:53:14 -0300
+Served asset /application.css - 200 OK (7ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 07:53:14 -0300
+Served asset /fornecedores.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 07:53:14 -0300
+Served asset /jquery.js - 200 OK (21ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 07:53:14 -0300
+Served asset /scaffolds.css - 200 OK (3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 07:53:14 -0300
+Served asset /home.css - 200 OK (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 07:53:14 -0300
+Served asset /jquery_ujs.js - 200 OK (13ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 07:53:14 -0300
+Served asset /fornecedores.js - 200 OK (3ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 07:53:14 -0300
+Served asset /home.js - 200 OK (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 07:53:14 -0300
+Served asset /application.js - 200 OK (4ms)
+
+
+Started POST "/usuarios/sign_in" for 127.0.0.1 at 2011-10-19 07:53:43 -0300
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b5uEVALSCaxsYRam0BOojDTJZHQHLzYGf3a/3eLyY1w=", "usuario"=>{"email"=>"usuario@padrao.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Acessar"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."email" = 'usuario@padrao.com' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  UPDATE "usuarios" SET "last_sign_in_at" = '2011-10-10 13:58:26.265315', "current_sign_in_at" = '2011-10-19 10:53:43.453859', "sign_in_count" = 7, "updated_at" = '2011-10-19 10:53:43.455019' WHERE "usuarios"."id" = 1
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 860ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-19 07:53:44 -0300
+  Processing by HomeController#index as HTML
+  [1m[36mUsuario Load (0.2ms)[0m  [1mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 61ms (Views: 20.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/fornecedores/new" for 127.0.0.1 at 2011-10-19 07:53:54 -0300
+  Processing by FornecedoresController#new as HTML
+Rendered fornecedores/_form.html.erb (16.9ms)
+Rendered fornecedores/new.html.erb within layouts/application (19.8ms)
+Completed 500 Internal Server Error in 39ms
+
+ActionView::Template::Error (undefined method `cnpf_cpf' for #<Fornecedor:0xba91c84>):
+    13: 
+    14:   <div class="field">
+    15:     <%= f.label :cnpf_cpf %><br />
+    16:     <%= f.text_field :cnpf_cpf %>
+    17:   </div>
+    18:   <div class="actions">
+    19:     <%= f.submit %>
+  app/views/fornecedores/_form.html.erb:16:in `block in _app_views_fornecedores__form_html_erb___675869700_97219210'
+  app/views/fornecedores/_form.html.erb:1:in `_app_views_fornecedores__form_html_erb___675869700_97219210'
+  app/views/fornecedores/new.html.erb:3:in `_app_views_fornecedores_new_html_erb__335883319_97224270'
+  app/controllers/fornecedores_controller.rb:29:in `new'
+
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.7ms)
+
+
+Started GET "/fornecedores/new" for 127.0.0.1 at 2011-10-19 08:00:24 -0300
+  Processing by FornecedoresController#new as HTML
+Rendered fornecedores/_form.html.erb (80.1ms)
+Rendered fornecedores/new.html.erb within layouts/application (83.3ms)
+  [1m[35mUsuario Load (0.3ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Completed 200 OK in 142ms (Views: 139.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:00:25 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:00:25 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:00:25 -0300
+Served asset /home.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:00:25 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:00:25 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:00:25 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:00:25 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:00:25 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:00:25 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/fornecedores/" for 127.0.0.1 at 2011-10-19 08:05:02 -0300
+  Processing by FornecedoresController#index as HTML
+  [1m[36mFornecedor Load (0.1ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" [0m
+Rendered fornecedores/index.html.erb within layouts/application (2.6ms)
+  [1m[35mUsuario Load (0.3ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Completed 200 OK in 141ms (Views: 137.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:05:02 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:05:02 -0300
+Served asset /home.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:05:02 -0300
+Served asset /fornecedores.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:05:02 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:05:02 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:05:02 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:05:02 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:05:02 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:05:02 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/fornecedores/new" for 127.0.0.1 at 2011-10-19 08:05:10 -0300
+  Processing by FornecedoresController#new as HTML
+Rendered fornecedores/_form.html.erb (16.5ms)
+Rendered fornecedores/new.html.erb within layouts/application (18.9ms)
+  [1m[36mUsuario Load (0.5ms)[0m  [1mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1[0m
+Completed 200 OK in 156ms (Views: 151.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:05:10 -0300
+Served asset /application.css - 304 Not Modified (27ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:05:10 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:05:10 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:05:10 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:05:10 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:05:10 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:05:10 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:05:10 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:05:10 -0300
+Served asset /application.js - 304 Not Modified (20ms)
+
+
+Started POST "/fornecedores" for 127.0.0.1 at 2011-10-19 08:05:16 -0300
+  Processing by FornecedoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b5uEVALSCaxsYRam0BOojDTJZHQHLzYGf3a/3eLyY1w=", "fornecedor"=>{"nome"=>"Priscila", "cpf"=>"111", "cnpj"=>"111"}, "commit"=>"Criar Fornecedor"}
+Completed 500 Internal Server Error in 27ms
+
+NameError (undefined local variable or method `cpf_ou_cnpj' for #<Fornecedor:0xa0a1dc4>):
+  app/controllers/fornecedores_controller.rb:46:in `block in create'
+  app/controllers/fornecedores_controller.rb:45:in `create'
+
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (81.8ms)
+
+
+Started POST "/fornecedores" for 127.0.0.1 at 2011-10-19 08:08:59 -0300
+  Processing by FornecedoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b5uEVALSCaxsYRam0BOojDTJZHQHLzYGf3a/3eLyY1w=", "fornecedor"=>{"nome"=>"Priscila", "cpf"=>"111", "cnpj"=>"111"}, "commit"=>"Criar Fornecedor"}
+Completed 500 Internal Server Error in 11ms
+
+NameError (undefined local variable or method `cpf_ou_cnpj' for #<Fornecedor:0xbc8a680>):
+  app/controllers/fornecedores_controller.rb:46:in `block in create'
+  app/controllers/fornecedores_controller.rb:45:in `create'
+
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.7ms)
+
+
+Started GET "/fornecedores/new" for 127.0.0.1 at 2011-10-19 08:11:22 -0300
+  Processing by FornecedoresController#new as HTML
+Rendered fornecedores/_form.html.erb (28.8ms)
+Rendered fornecedores/new.html.erb within layouts/application (117.6ms)
+  [1m[35mUsuario Load (0.3ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Completed 200 OK in 186ms (Views: 182.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:11:23 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:11:23 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:11:23 -0300
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:11:23 -0300
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:11:23 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:11:23 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:11:23 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:11:23 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:11:23 -0300
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started POST "/fornecedores" for 127.0.0.1 at 2011-10-19 08:11:34 -0300
+  Processing by FornecedoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b5uEVALSCaxsYRam0BOojDTJZHQHLzYGf3a/3eLyY1w=", "fornecedor"=>{"nome"=>"Teste", "cpf"=>"01368739105", "cnpj"=>""}, "commit"=>"Criar Fornecedor"}
+Completed 500 Internal Server Error in 10ms
+
+NameError (undefined local variable or method `cpf_ou_cnpj' for #<Fornecedor:0xa2ff06c>):
+  app/controllers/fornecedores_controller.rb:46:in `block in create'
+  app/controllers/fornecedores_controller.rb:45:in `create'
+
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.6ms)
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.0ms)
+
+
+Started POST "/fornecedores" for 127.0.0.1 at 2011-10-19 08:12:09 -0300
+  Processing by FornecedoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b5uEVALSCaxsYRam0BOojDTJZHQHLzYGf3a/3eLyY1w=", "fornecedor"=>{"nome"=>"Teste", "cpf"=>"01368739105", "cnpj"=>""}, "commit"=>"Criar Fornecedor"}
+  [1m[36mSQL (3.4ms)[0m  [1mINSERT INTO "fornecedores" ("cnpj", "cpf", "created_at", "nome", "pj", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["cnpj", nil], ["cpf", "013.687.391-05"], ["created_at", Qua, 19 Out 2011 11:12:09 UTC +00:00], ["nome", "Teste"], ["pj", nil], ["updated_at", Qua, 19 Out 2011 11:12:09 UTC +00:00]]
+Redirected to http://0.0.0.0:3000/fornecedores/1
+Completed 302 Found in 226ms
+
+
+Started GET "/fornecedores/1" for 127.0.0.1 at 2011-10-19 08:12:09 -0300
+  Processing by FornecedoresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFornecedor Load (0.5ms)[0m  SELECT "fornecedores".* FROM "fornecedores" WHERE "fornecedores"."id" = ? LIMIT 1  [["id", "1"]]
+Rendered fornecedores/show.html.erb within layouts/application (160.8ms)
+Completed 500 Internal Server Error in 181ms
+
+ActionView::Template::Error (undefined local variable or method `fornecedor' for #<#<Class:0xa9e1b8c>:0xa978574>):
+    4:   <b>Cnpf cpf:</b>
+    5:   <%= @fornecedor.nome %>
+    6: 
+    7:   <% if fornecedor.pj %>
+    8:   <%= @fornecedor.cnpj %>
+    9:   <% else %>
+    10:   <%= @fornecedor.cpf %>
+  app/views/fornecedores/show.html.erb:7:in `_app_views_fornecedores_show_html_erb___461437690_88635350'
+  app/controllers/fornecedores_controller.rb:18:in `show'
+
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.6ms)
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.8ms)
+
+
+Started GET "/fornecedores/1" for 127.0.0.1 at 2011-10-19 08:13:08 -0300
+  Processing by FornecedoresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFornecedor Load (0.5ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" WHERE "fornecedores"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered fornecedores/show.html.erb within layouts/application (89.0ms)
+  [1m[35mUsuario Load (0.6ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Completed 200 OK in 155ms (Views: 146.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:13:08 -0300
+Served asset /application.css - 304 Not Modified (36ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:13:08 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:13:08 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:13:08 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:13:08 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:13:08 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:13:08 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:13:08 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:13:08 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/fornecedores/1/edit" for 127.0.0.1 at 2011-10-19 08:14:56 -0300
+  Processing by FornecedoresController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFornecedor Load (0.6ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" WHERE "fornecedores"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered fornecedores/_form.html.erb (108.3ms)
+Rendered fornecedores/edit.html.erb within layouts/application (112.8ms)
+  [1m[35mUsuario Load (0.3ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Completed 200 OK in 182ms (Views: 170.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:14:57 -0300
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:14:57 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:14:57 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:14:57 -0300
+Served asset /scaffolds.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:14:57 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:14:57 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:14:57 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:14:57 -0300
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:14:57 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started PUT "/fornecedores/1" for 127.0.0.1 at 2011-10-19 08:15:08 -0300
+  Processing by FornecedoresController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b5uEVALSCaxsYRam0BOojDTJZHQHLzYGf3a/3eLyY1w=", "fornecedor"=>{"nome"=>"Teste", "cpf"=>"111", "cnpj"=>""}, "commit"=>"Atualizar Fornecedor", "id"=>"1"}
+  [1m[36mFornecedor Load (0.6ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" WHERE "fornecedores"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered fornecedores/_form.html.erb (5.1ms)
+Rendered fornecedores/edit.html.erb within layouts/application (7.4ms)
+  [1m[35mUsuario Load (0.3ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Completed 200 OK in 186ms (Views: 58.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:15:08 -0300
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:15:08 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:15:08 -0300
+Served asset /home.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:15:08 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:15:08 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:15:08 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:15:08 -0300
+Served asset /fornecedores.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:15:08 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:15:08 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started PUT "/fornecedores/1" for 127.0.0.1 at 2011-10-19 08:19:05 -0300
+  Processing by FornecedoresController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b5uEVALSCaxsYRam0BOojDTJZHQHLzYGf3a/3eLyY1w=", "fornecedor"=>{"nome"=>"Teste", "cpf"=>"1", "cnpj"=>"000000000191"}, "commit"=>"Atualizar Fornecedor", "id"=>"1"}
+  [1m[36mFornecedor Load (0.2ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" WHERE "fornecedores"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered fornecedores/_form.html.erb (7.4ms)
+Rendered fornecedores/edit.html.erb within layouts/application (9.9ms)
+  [1m[35mUsuario Load (0.6ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Completed 200 OK in 88ms (Views: 65.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:19:05 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:19:05 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:19:05 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:19:05 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:19:05 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:19:05 -0300
+Served asset /scaffolds.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:19:05 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:19:05 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:19:05 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started PUT "/fornecedores/1" for 127.0.0.1 at 2011-10-19 08:21:45 -0300
+  Processing by FornecedoresController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b5uEVALSCaxsYRam0BOojDTJZHQHLzYGf3a/3eLyY1w=", "fornecedor"=>{"nome"=>"Teste", "cpf"=>"1", "cnpj"=>"000000000191"}, "commit"=>"Atualizar Fornecedor", "id"=>"1"}
+  [1m[36mFornecedor Load (0.4ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" WHERE "fornecedores"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered fornecedores/_form.html.erb (5.8ms)
+Rendered fornecedores/edit.html.erb within layouts/application (8.5ms)
+  [1m[35mUsuario Load (0.3ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Completed 200 OK in 88ms (Views: 66.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:21:45 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:21:45 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:21:45 -0300
+Served asset /scaffolds.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:21:46 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:21:46 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:21:46 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:21:46 -0300
+Served asset /home.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:21:46 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:21:46 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started PUT "/fornecedores/1" for 127.0.0.1 at 2011-10-19 08:40:26 -0300
+  Processing by FornecedoresController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b5uEVALSCaxsYRam0BOojDTJZHQHLzYGf3a/3eLyY1w=", "fornecedor"=>{"nome"=>"Teste", "cpf"=>"1", "cnpj"=>"000000000191"}, "commit"=>"Atualizar Fornecedor", "id"=>"1"}
+  [1m[36mFornecedor Load (0.2ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" WHERE "fornecedores"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered fornecedores/_form.html.erb (5.9ms)
+Rendered fornecedores/edit.html.erb within layouts/application (8.0ms)
+  [1m[35mUsuario Load (0.5ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Completed 200 OK in 79ms (Views: 64.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:40:26 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:40:26 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:40:26 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:40:26 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:40:26 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:40:26 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:40:26 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:40:26 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:40:26 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/fornecedores" for 127.0.0.1 at 2011-10-19 08:40:29 -0300
+  Processing by FornecedoresController#index as HTML
+  [1m[36mFornecedor Load (0.2ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" [0m
+  [1m[35mUsuario Load (0.4ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Rendered fornecedores/index.html.erb within layouts/application (52.6ms)
+Completed 200 OK in 73ms (Views: 67.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:40:29 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:40:29 -0300
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:40:30 -0300
+Served asset /home.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:40:30 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:40:30 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:40:30 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:40:30 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:40:30 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:40:30 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/fornecedores" for 127.0.0.1 at 2011-10-19 08:41:17 -0300
+  Processing by FornecedoresController#index as HTML
+  [1m[36mFornecedor Load (0.2ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" [0m
+  [1m[35mUsuario Load (0.4ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Rendered fornecedores/index.html.erb within layouts/application (53.1ms)
+Completed 200 OK in 74ms (Views: 70.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:41:17 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:41:17 -0300
+Served asset /home.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:41:17 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:41:17 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:41:17 -0300
+Served asset /fornecedores.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:41:17 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:41:17 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:41:17 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:41:17 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/fornecedores" for 127.0.0.1 at 2011-10-19 08:41:38 -0300
+  Processing by FornecedoresController#index as HTML
+  [1m[36mFornecedor Load (0.2ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" [0m
+  [1m[35mUsuario Load (0.4ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Rendered fornecedores/index.html.erb within layouts/application (64.0ms)
+Completed 200 OK in 80ms (Views: 75.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:41:38 -0300
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:41:38 -0300
+Served asset /home.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:41:38 -0300
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:41:38 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:41:38 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:41:38 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:41:38 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:41:38 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:41:38 -0300
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/fornecedores" for 127.0.0.1 at 2011-10-19 08:41:47 -0300
+  Processing by FornecedoresController#index as HTML
+  [1m[36mFornecedor Load (0.3ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" [0m
+  [1m[35mUsuario Load (0.3ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Rendered fornecedores/index.html.erb within layouts/application (54.7ms)
+Completed 200 OK in 70ms (Views: 66.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:41:47 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:41:47 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:41:47 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:41:47 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:41:47 -0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:41:47 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:41:47 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:41:47 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:41:47 -0300
+Served asset /fornecedores.js - 304 Not Modified (1ms)
+
+
+Started GET "/fornecedores" for 127.0.0.1 at 2011-10-19 08:41:54 -0300
+  Processing by FornecedoresController#index as HTML
+  [1m[36mFornecedor Load (0.2ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" [0m
+  [1m[35mUsuario Load (0.3ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Rendered fornecedores/index.html.erb within layouts/application (53.8ms)
+Completed 200 OK in 73ms (Views: 68.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:41:55 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:41:55 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:41:55 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:41:55 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:41:55 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:41:55 -0300
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:41:55 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:41:55 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:41:55 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/fornecedores" for 127.0.0.1 at 2011-10-19 08:42:01 -0300
+  Processing by FornecedoresController#index as HTML
+  [1m[36mFornecedor Load (0.2ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" [0m
+  [1m[35mUsuario Load (0.4ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Rendered fornecedores/index.html.erb within layouts/application (51.8ms)
+Completed 200 OK in 72ms (Views: 67.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:42:01 -0300
+Served asset /application.css - 304 Not Modified (18ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:42:01 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:01 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:42:01 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:42:01 -0300
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:01 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:01 -0300
+Served asset /fornecedores.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:01 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:01 -0300
+Served asset /application.js - 304 Not Modified (10ms)
+
+
+Started GET "/fornecedores" for 127.0.0.1 at 2011-10-19 08:42:15 -0300
+  Processing by FornecedoresController#index as HTML
+  [1m[36mFornecedor Load (0.5ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" [0m
+  [1m[35mUsuario Load (0.6ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Rendered fornecedores/index.html.erb within layouts/application (62.1ms)
+Completed 200 OK in 91ms (Views: 81.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:42:16 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:42:16 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:16 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:16 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:42:16 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:42:16 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:16 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:16 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:16 -0300
+Served asset /fornecedores.js - 304 Not Modified (1ms)
+
+
+Started DELETE "/usuarios/sign_out" for 127.0.0.1 at 2011-10-19 08:42:22 -0300
+  Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"b5uEVALSCaxsYRam0BOojDTJZHQHLzYGf3a/3eLyY1w="}
+  [1m[36mUsuario Load (0.2ms)[0m  [1mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 66ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-19 08:42:23 -0300
+  Processing by HomeController#index as HTML
+Completed   in 15ms
+
+
+Started GET "/usuarios/sign_in" for 127.0.0.1 at 2011-10-19 08:42:23 -0300
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (1.3ms)
+Rendered devise/sessions/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 77ms (Views: 29.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:42:23 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:23 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:42:23 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:23 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:42:23 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:42:23 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:23 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:23 -0300
+Served asset /home.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:23 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/fornecedores/" for 127.0.0.1 at 2011-10-19 08:42:28 -0300
+  Processing by FornecedoresController#index as HTML
+  [1m[35mFornecedor Load (0.2ms)[0m  SELECT "fornecedores".* FROM "fornecedores" 
+Rendered fornecedores/index.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:42:28 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:42:28 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:42:28 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:28 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:42:28 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:28 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:28 -0300
+Served asset /fornecedores.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:28 -0300
+Served asset /home.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:28 -0300
+Served asset /application.js - 304 Not Modified (10ms)
+
+
+Started GET "/fornecedores/new" for 127.0.0.1 at 2011-10-19 08:42:33 -0300
+  Processing by FornecedoresController#new as HTML
+Rendered fornecedores/_form.html.erb (13.3ms)
+Rendered fornecedores/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 40ms (Views: 38.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:42:33 -0300
+Served asset /fornecedores.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:42:33 -0300
+Served asset /application.css - 304 Not Modified (114ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:42:33 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:42:33 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:33 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:33 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:33 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:33 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:42:33 -0300
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/fornecedores/" for 127.0.0.1 at 2011-10-19 08:43:09 -0300
+  Processing by FornecedoresController#index as HTML
+  [1m[36mFornecedor Load (0.1ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" [0m
+Rendered fornecedores/index.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 37ms (Views: 34.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:43:09 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:43:09 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:43:09 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:43:09 -0300
+Served asset /fornecedores.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:09 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:09 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:09 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:09 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:09 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started POST "/usuarios/sign_in" for 127.0.0.1 at 2011-10-19 08:43:16 -0300
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GsMU+lrwJqXry/uFPEbnKVa+Ah+HFGbkFvpIln+h5N4=", "usuario"=>{"email"=>"usuario@padrao.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Acessar"}
+  [1m[35mUsuario Load (0.3ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."email" = 'usuario@padrao.com' LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mUPDATE "usuarios" SET "last_sign_in_at" = '2011-10-19 10:53:43.453859', "current_sign_in_at" = '2011-10-19 11:43:16.926588', "sign_in_count" = 8, "updated_at" = '2011-10-19 11:43:16.927247' WHERE "usuarios"."id" = 1[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 335ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-19 08:43:17 -0300
+  Processing by HomeController#index as HTML
+  [1m[35mUsuario Load (0.3ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 80ms (Views: 23.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:43:17 -0300
+Served asset /fornecedores.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:43:17 -0300
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:43:17 -0300
+Served asset /home.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:17 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:43:17 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:17 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:17 -0300
+Served asset /fornecedores.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:17 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:17 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/fornecedores/" for 127.0.0.1 at 2011-10-19 08:43:22 -0300
+  Processing by FornecedoresController#index as HTML
+  [1m[36mFornecedor Load (0.2ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" [0m
+  [1m[35mUsuario Load (0.3ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Rendered fornecedores/index.html.erb within layouts/application (50.7ms)
+Completed 200 OK in 70ms (Views: 66.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:43:23 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:43:23 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:23 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:43:23 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:43:23 -0300
+Served asset /home.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:23 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:23 -0300
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:23 -0300
+Served asset /home.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:23 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/fornecedores/" for 127.0.0.1 at 2011-10-19 08:43:42 -0300
+  Processing by FornecedoresController#index as HTML
+  [1m[36mFornecedor Load (0.3ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" [0m
+  [1m[35mUsuario Load (0.4ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Rendered fornecedores/index.html.erb within layouts/application (55.2ms)
+Completed 200 OK in 72ms (Views: 66.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:43:42 -0300
+Served asset /application.css - 304 Not Modified (125ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:43:43 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:43:43 -0300
+Served asset /fornecedores.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:43 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:43 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:43 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:43 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:43:43 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:43 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/fornecedores/" for 127.0.0.1 at 2011-10-19 08:43:54 -0300
+  Processing by FornecedoresController#index as HTML
+  [1m[36mFornecedor Load (0.5ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" [0m
+  [1m[35mUsuario Load (0.3ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Rendered fornecedores/index.html.erb within layouts/application (51.1ms)
+Completed 200 OK in 79ms (Views: 69.6ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 08:43:54 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 08:43:54 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:54 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 08:43:54 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:54 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 08:43:54 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:54 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:54 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 08:43:54 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/fornecedores/1" for 127.0.0.1 at 2011-10-19 09:34:29 -0300
+  Processing by FornecedoresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFornecedor Load (0.6ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" WHERE "fornecedores"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered fornecedores/show.html.erb within layouts/application (20.2ms)
+  [1m[35mUsuario Load (0.4ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Completed 200 OK in 187ms (Views: 174.9ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 09:34:30 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 09:34:30 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 09:34:30 -0300
+Served asset /fornecedores.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 09:34:30 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 09:34:30 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 09:34:30 -0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 09:34:30 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 09:34:30 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 09:34:30 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/fornecedores/1/edit" for 127.0.0.1 at 2011-10-19 09:34:36 -0300
+  Processing by FornecedoresController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFornecedor Load (0.2ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" WHERE "fornecedores"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered fornecedores/_form.html.erb (12.9ms)
+Rendered fornecedores/edit.html.erb within layouts/application (15.4ms)
+  [1m[35mUsuario Load (1.2ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Completed 200 OK in 148ms (Views: 142.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 09:34:36 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 09:34:36 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 09:34:36 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 09:34:36 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 09:34:36 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 09:34:36 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 09:34:36 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 09:34:36 -0300
+Served asset /fornecedores.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 09:34:36 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/fornecedores/new" for 127.0.0.1 at 2011-10-19 10:31:46 -0300
+  Processing by FornecedoresController#new as HTML
+Rendered fornecedores/_form.html.erb (405.3ms)
+Rendered fornecedores/new.html.erb within layouts/application (406.3ms)
+Completed 500 Internal Server Error in 421ms
+
+ActionView::Template::Error (undefined method `checkbox_field' for #<ActionView::Helpers::FormBuilder:0xa55c148>):
+    18: 
+    19:   <div class="field" id="fornecedor_pj">
+    20:     <%= f.label 'Pessoa Jurídica?'%><br />
+    21:     <%= f.checkbox_field :fornecedor_pj %>
+    22:   </div>
+    23: 
+    24:   <div class="field" id="cpf">
+  app/views/fornecedores/_form.html.erb:21:in `block in _app_views_fornecedores__form_html_erb___675869700_88631570'
+  app/views/fornecedores/_form.html.erb:1:in `_app_views_fornecedores__form_html_erb___675869700_88631570'
+  app/views/fornecedores/new.html.erb:3:in `_app_views_fornecedores_new_html_erb__335883319_97224270'
+  app/controllers/fornecedores_controller.rb:29:in `new'
+
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.2ms)
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.0ms)
+
+
+Started GET "/fornecedores/new" for 127.0.0.1 at 2011-10-19 10:32:17 -0300
+  Processing by FornecedoresController#new as HTML
+Rendered fornecedores/_form.html.erb (12.9ms)
+Rendered fornecedores/new.html.erb within layouts/application (14.3ms)
+Cache for Asset (application.js) is stale
+Parse error on line 5: Unexpected 'POST_IF'
+Compiled application.js  (5ms)  (pid 2288)
+Completed 500 Internal Server Error in 167ms
+
+ActionView::Template::Error (Parse error on line 5: Unexpected 'POST_IF'
+  (in /home/aluno/projetos/aula07/app/assets/javascripts/fornecedores.js.coffee)):
+    3: <head>
+    4:   <title>Pagamento</title>
+    5:   <%= stylesheet_link_tag    "application" %>
+    6:   <%= javascript_include_tag "application" %>
+    7:   <%= csrf_meta_tags %>
+    8: 
+    9: 
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___828349829_91108560'
+  app/controllers/fornecedores_controller.rb:29:in `new'
+
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.3ms)
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.1ms)
+
+
+Started GET "/fornecedores/new" for 127.0.0.1 at 2011-10-19 10:33:09 -0300
+  Processing by FornecedoresController#new as HTML
+Rendered fornecedores/_form.html.erb (14.4ms)
+Rendered fornecedores/new.html.erb within layouts/application (15.9ms)
+Cache for Asset (application.js) is stale
+Parse error on line 5: Unexpected 'POST_IF'
+Compiled application.js  (5ms)  (pid 2288)
+Completed 500 Internal Server Error in 50ms
+
+ActionView::Template::Error (Parse error on line 5: Unexpected 'POST_IF'
+  (in /home/aluno/projetos/aula07/app/assets/javascripts/fornecedores.js.coffee)):
+    3: <head>
+    4:   <title>Pagamento</title>
+    5:   <%= stylesheet_link_tag    "application" %>
+    6:   <%= javascript_include_tag "application" %>
+    7:   <%= csrf_meta_tags %>
+    8: 
+    9: 
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___828349829_91108560'
+  app/controllers/fornecedores_controller.rb:29:in `new'
+
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.9ms)
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.5ms)
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.5ms)
+
+
+Started GET "/fornecedores/new" for 127.0.0.1 at 2011-10-19 10:34:26 -0300
+  Processing by FornecedoresController#new as HTML
+Rendered fornecedores/_form.html.erb (14.7ms)
+Rendered fornecedores/new.html.erb within layouts/application (17.0ms)
+Cache for Asset (application.js) is stale
+Parse error on line 5: Unexpected 'POST_IF'
+Compiled application.js  (6ms)  (pid 2288)
+Completed 500 Internal Server Error in 111ms
+
+ActionView::Template::Error (Parse error on line 5: Unexpected 'POST_IF'
+  (in /home/aluno/projetos/aula07/app/assets/javascripts/fornecedores.js.coffee)):
+    3: <head>
+    4:   <title>Pagamento</title>
+    5:   <%= stylesheet_link_tag    "application" %>
+    6:   <%= javascript_include_tag "application" %>
+    7:   <%= csrf_meta_tags %>
+    8: 
+    9: 
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___828349829_91108560'
+  app/controllers/fornecedores_controller.rb:29:in `new'
+
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.4ms)
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /home/aluno/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.4ms)
+
+
+Started GET "/fornecedores/new" for 127.0.0.1 at 2011-10-19 10:34:53 -0300
+  Processing by FornecedoresController#new as HTML
+Rendered fornecedores/_form.html.erb (11.7ms)
+Rendered fornecedores/new.html.erb within layouts/application (13.0ms)
+Compiled fornecedores.js  (6ms)  (pid 2288)
+Compiled application.js  (5ms)  (pid 2288)
+  [1m[36mUsuario Load (0.2ms)[0m  [1mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1[0m
+Completed 200 OK in 93ms (Views: 90.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 10:34:53 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 10:34:53 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 10:34:53 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 10:34:53 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 10:34:53 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 10:34:53 -0300
+Served asset /fornecedores.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 10:34:53 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 10:34:53 -0300
+Served asset /fornecedores.js - 200 OK (11ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 10:34:53 -0300
+Served asset /application.js - 200 OK (22ms)
+
+
+Started POST "/fornecedores" for 127.0.0.1 at 2011-10-19 10:37:21 -0300
+  Processing by FornecedoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GsMU+lrwJqXry/uFPEbnKVa+Ah+HFGbkFvpIln+h5N4=", "fornecedor"=>{"nome"=>"Priscila2", "pj"=>"0", "cpf"=>"01368739105", "cnpj"=>""}, "commit"=>"Criar Fornecedor"}
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "fornecedores" ("cnpj", "cpf", "created_at", "nome", "pj", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["cnpj", nil], ["cpf", "013.687.391-05"], ["created_at", Qua, 19 Out 2011 13:37:21 UTC +00:00], ["nome", "Priscila2"], ["pj", false], ["updated_at", Qua, 19 Out 2011 13:37:21 UTC +00:00]]
+Redirected to http://0.0.0.0:3000/fornecedores/2
+Completed 302 Found in 176ms
+
+
+Started GET "/fornecedores/2" for 127.0.0.1 at 2011-10-19 10:37:21 -0300
+  Processing by FornecedoresController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFornecedor Load (0.2ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" WHERE "fornecedores"."id" = ? LIMIT 1[0m  [["id", "2"]]
+Rendered fornecedores/show.html.erb within layouts/application (11.4ms)
+  [1m[35mUsuario Load (0.6ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Completed 200 OK in 65ms (Views: 60.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:21 -0300
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:21 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:21 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:21 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:21 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:21 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:21 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:21 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:21 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/fornecedores/2/edit" for 127.0.0.1 at 2011-10-19 10:37:24 -0300
+  Processing by FornecedoresController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFornecedor Load (0.4ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" WHERE "fornecedores"."id" = ? LIMIT 1[0m  [["id", "2"]]
+Rendered fornecedores/_form.html.erb (13.9ms)
+Rendered fornecedores/edit.html.erb within layouts/application (17.2ms)
+  [1m[35mUsuario Load (0.4ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Completed 200 OK in 165ms (Views: 158.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:24 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:24 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:24 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:24 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:24 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:24 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:24 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:24 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:24 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/fornecedores" for 127.0.0.1 at 2011-10-19 10:37:27 -0300
+  Processing by FornecedoresController#index as HTML
+  [1m[36mFornecedor Load (0.2ms)[0m  [1mSELECT "fornecedores".* FROM "fornecedores" [0m
+  [1m[35mUsuario Load (0.3ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Rendered fornecedores/index.html.erb within layouts/application (133.7ms)
+Completed 200 OK in 155ms (Views: 149.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:27 -0300
+Served asset /application.css - 304 Not Modified (21ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:27 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:27 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:27 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:27 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:27 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:27 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:27 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:27 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/fornecedores/new" for 127.0.0.1 at 2011-10-19 10:37:31 -0300
+  Processing by FornecedoresController#new as HTML
+Rendered fornecedores/_form.html.erb (104.0ms)
+Rendered fornecedores/new.html.erb within layouts/application (107.1ms)
+  [1m[36mUsuario Load (0.2ms)[0m  [1mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1[0m
+Completed 200 OK in 170ms (Views: 166.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:32 -0300
+Served asset /application.css - 304 Not Modified (31ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:32 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:32 -0300
+Served asset /home.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:32 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:32 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:32 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:32 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:32 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:32 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/fornecedores" for 127.0.0.1 at 2011-10-19 10:37:38 -0300
+  Processing by FornecedoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GsMU+lrwJqXry/uFPEbnKVa+Ah+HFGbkFvpIln+h5N4=", "fornecedor"=>{"nome"=>"PJ", "pj"=>"1", "cpf"=>"", "cnpj"=>"000000000191"}, "commit"=>"Criar Fornecedor"}
+Rendered fornecedores/_form.html.erb (82.0ms)
+Rendered fornecedores/new.html.erb within layouts/application (83.7ms)
+  [1m[35mUsuario Load (0.2ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Completed 200 OK in 147ms (Views: 132.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:38 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:38 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:38 -0300
+Served asset /fornecedores.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:38 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:38 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:38 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:38 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:38 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:38 -0300
+Served asset /home.js - 304 Not Modified (6ms)
+
+
+Started POST "/fornecedores" for 127.0.0.1 at 2011-10-19 10:37:51 -0300
+  Processing by FornecedoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GsMU+lrwJqXry/uFPEbnKVa+Ah+HFGbkFvpIln+h5N4=", "fornecedor"=>{"nome"=>"PJ", "pj"=>"0", "cpf"=>"", "cnpj"=>"0000000000191"}, "commit"=>"Criar Fornecedor"}
+Rendered fornecedores/_form.html.erb (5.8ms)
+Rendered fornecedores/new.html.erb within layouts/application (7.2ms)
+  [1m[36mUsuario Load (0.2ms)[0m  [1mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1[0m
+Completed 200 OK in 154ms (Views: 137.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:51 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:52 -0300
+Served asset /fornecedores.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:52 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:52 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:52 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:52 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:52 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:52 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:52 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/fornecedores" for 127.0.0.1 at 2011-10-19 10:37:55 -0300
+  Processing by FornecedoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GsMU+lrwJqXry/uFPEbnKVa+Ah+HFGbkFvpIln+h5N4=", "fornecedor"=>{"nome"=>"PJ", "pj"=>"1", "cpf"=>"", "cnpj"=>"0000000000191"}, "commit"=>"Criar Fornecedor"}
+Rendered fornecedores/_form.html.erb (7.1ms)
+Rendered fornecedores/new.html.erb within layouts/application (9.4ms)
+  [1m[35mUsuario Load (0.4ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Completed 200 OK in 160ms (Views: 148.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:55 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:55 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:55 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:55 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 10:37:55 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:55 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:55 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:55 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 10:37:55 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/fornecedores" for 127.0.0.1 at 2011-10-19 10:43:22 -0300
+  Processing by FornecedoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GsMU+lrwJqXry/uFPEbnKVa+Ah+HFGbkFvpIln+h5N4=", "fornecedor"=>{"nome"=>"PJ", "pj"=>"1", "cpf"=>"0000000000000191", "cnpj"=>"0000000000191"}, "commit"=>"Criar Fornecedor"}
+Rendered fornecedores/_form.html.erb (5.8ms)
+Rendered fornecedores/new.html.erb within layouts/application (7.2ms)
+  [1m[36mUsuario Load (0.2ms)[0m  [1mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1[0m
+Completed 200 OK in 158ms (Views: 136.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 10:43:22 -0300
+Served asset /application.css - 304 Not Modified (23ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 10:43:22 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 10:43:23 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 10:43:23 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 10:43:23 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 10:43:23 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 10:43:23 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 10:43:23 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 10:43:23 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/fornecedores" for 127.0.0.1 at 2011-10-19 10:43:37 -0300
+  Processing by FornecedoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GsMU+lrwJqXry/uFPEbnKVa+Ah+HFGbkFvpIln+h5N4=", "fornecedor"=>{"nome"=>"PJ", "pj"=>"1", "cpf"=>"0000000000000191", "cnpj"=>"0000000000191"}, "commit"=>"Criar Fornecedor"}
+Rendered fornecedores/_form.html.erb (6.1ms)
+Rendered fornecedores/new.html.erb within layouts/application (7.6ms)
+  [1m[35mUsuario Load (0.3ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Completed 200 OK in 158ms (Views: 145.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 10:43:37 -0300
+Served asset /application.css - 304 Not Modified (30ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 10:43:37 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 10:43:37 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 10:43:37 -0300
+Served asset /scaffolds.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 10:43:37 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 10:43:37 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 10:43:37 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 10:43:37 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 10:43:37 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started POST "/fornecedores" for 127.0.0.1 at 2011-10-19 10:43:46 -0300
+  Processing by FornecedoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GsMU+lrwJqXry/uFPEbnKVa+Ah+HFGbkFvpIln+h5N4=", "fornecedor"=>{"nome"=>"PJ", "pj"=>"0", "cpf"=>"0000000000000191", "cnpj"=>"000000000000191"}, "commit"=>"Criar Fornecedor"}
+Rendered fornecedores/_form.html.erb (6.5ms)
+Rendered fornecedores/new.html.erb within layouts/application (8.4ms)
+  [1m[36mUsuario Load (0.3ms)[0m  [1mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1[0m
+Completed 200 OK in 153ms (Views: 139.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 10:43:47 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 10:43:47 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 10:43:47 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 10:43:47 -0300
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 10:43:47 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 10:43:47 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 10:43:47 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 10:43:47 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 10:43:47 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started POST "/fornecedores" for 127.0.0.1 at 2011-10-19 10:45:24 -0300
+  Processing by FornecedoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GsMU+lrwJqXry/uFPEbnKVa+Ah+HFGbkFvpIln+h5N4=", "fornecedor"=>{"nome"=>"PJ", "pj"=>"1", "cpf"=>"0000000000000191", "cnpj"=>"000000000000191"}, "commit"=>"Criar Fornecedor"}
+Rendered fornecedores/_form.html.erb (13.5ms)
+Rendered fornecedores/new.html.erb within layouts/application (17.2ms)
+  [1m[35mUsuario Load (0.3ms)[0m  SELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = 1 LIMIT 1
+Completed 200 OK in 233ms (Views: 207.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-19 10:45:24 -0300
+Served asset /application.css - 304 Not Modified (36ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-19 10:45:24 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.css?body=1" for 127.0.0.1 at 2011-10-19 10:45:24 -0300
+Served asset /fornecedores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-19 10:45:24 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-19 10:45:24 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-19 10:45:24 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fornecedores.js?body=1" for 127.0.0.1 at 2011-10-19 10:45:24 -0300
+Served asset /fornecedores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-19 10:45:24 -0300
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-19 10:45:24 -0300
+Served asset /application.js - 304 Not Modified (0ms)

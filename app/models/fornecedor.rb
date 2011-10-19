@@ -4,12 +4,18 @@ require "brcpfcnpj"
 
 class Fornecedor < ActiveRecord::Base
 		validates :nome, presence: true
+		#valida a presença do cnpj somente se pj retorna true
+		validates :cnpj, presence:true, if: :pj?
+		validates :cpf, presence:true, unless: :pj?
+
 		usar_como_cpf :cpf
 		usar_como_cnpj :cnpj
 		validate :cpf_ou_cnpj
 
+
+
 		private
-		def cpf_e_cnpj
+		def cpf_ou_cnpj
 			if cpf.present? and cnpj.present?
 				errors[:base] << "Use CPF ou CNPJ"
 			end
