@@ -18,9 +18,9 @@
   <tr>
     <td><%= conformidade.caixa %></td>
     <td><%= conformidade.processo %></td>
-    <td><%= conformidade.data %></td>
-    <td><%= conformidade.valor %></td>
-    <td><%= conformidade.fornecedor %></td>
+    <td><%= localize conformidade.data %></td>
+    <td><%= number_to_currency conformidade.valor %></td>
+    <td><%= conformidade.fornecedor.nome %></td>
     <td><%= link_to 'Detalhes', conformidade %></td>
 
     <% if usuario_signed_in? %>
@@ -34,5 +34,5 @@
 <br />
 
  <% if usuario_signed_in? %>
-<%= link_to 'New Conformidade', new_conformidade_path %>
+<%= link_to 'Nova Conformidade', new_conformidade_path %>
 <% end %>

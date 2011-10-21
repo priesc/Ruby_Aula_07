@@ -11,18 +11,13 @@
 </p>
 
 <p>
-  <b>Processo:</b>
-  <%= @conformidade.processo %>
-</p>
-
-<p>
   <b>Data:</b>
-  <%= @conformidade.data %>
+  <%= localize @conformidade.data %>
 </p>
 
 <p>
   <b>Valor:</b>
-  <%= @conformidade.valor %>
+  <%= number_to_currency @conformidade.valor %>
 </p>
 
 <p>
