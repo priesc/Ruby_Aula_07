@@ -10,13 +10,18 @@
 </head>
 <body>
 
+<div class="usuario">
 <% if current_usuario %>
 
 	<%= link_to 'Sair', destroy_usuario_session_path, method: :delete %>  
 	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+<% else %>
+	<%= link_to 'Acessar', new_usuario_session_path %> 
+
 <% end %>
+</div>
 
 <%= yield %>
 	

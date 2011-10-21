@@ -1,0 +1,38 @@
+<h1>Conformidades</h1>
+
+<table>
+  <tr>
+    <th>Caixa</th>
+    <th>Processo</th>
+    <th>Data</th>
+    <th>Valor</th>
+    <th>Fornecedor</th>
+    <th></th>
+    <% if usuario_signed_in? %>
+    <th></th>
+    <th></th>
+    <% end %>
+  </tr>
+
+<% @conformidades.each do |conformidade| %>
+  <tr>
+    <td><%= conformidade.caixa %></td>
+    <td><%= conformidade.processo %></td>
+    <td><%= conformidade.data %></td>
+    <td><%= conformidade.valor %></td>
+    <td><%= conformidade.fornecedor %></td>
+    <td><%= link_to 'Detalhes', conformidade %></td>
+
+    <% if usuario_signed_in? %>
+    <td><%= link_to 'Editar', edit_conformidade_path(conformidade) %></td>
+    <td><%= link_to 'Excluir', conformidade, confirm: 'Tem certeza de que deseja excluir?', method: :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+ <% if usuario_signed_in? %>
+<%= link_to 'New Conformidade', new_conformidade_path %>
+<% end %>

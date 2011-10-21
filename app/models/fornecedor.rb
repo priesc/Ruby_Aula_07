@@ -3,6 +3,8 @@
 require "brcpfcnpj"
 
 class Fornecedor < ActiveRecord::Base
+		has_many :conformidades
+
 		validates :nome, presence: true
 		#valida a presença do cnpj somente se pj retorna true
 		validates :cnpj, presence:true, if: :pj?

@@ -1,0 +1,46 @@
+<%= form_for(@conformidade) do |f| %>
+  <% if @conformidade.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@conformidade.errors.count, "error") %> prohibited this conformidade from being saved:</h2>
+
+      <ul>
+      <% @conformidade.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Caixa' %><br />
+    <%= f.text_field :caixa %>
+  </div>
+
+   <div class="field">
+    <%= f.label 'Data' %><br />
+    <%= f.date_select :data %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Fornecedor' %><br />
+    <%= f.collection_select :fornecedor_id, Fornecedor.all, :id, :nome %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Valor' %><br />
+    <%= f.text_field :valor %>
+  </div>
+  <div class="field">
+    <%= f.label 'Processo' %><br />
+    <%= f.text_field :processo %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Observação' %><br />
+    <%= f.text_field :observacao %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

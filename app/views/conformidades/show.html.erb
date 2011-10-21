@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Caixa:</b>
+  <%= @conformidade.caixa %>
+</p>
+
+<p>
+  <b>Processo:</b>
+  <%= @conformidade.processo %>
+</p>
+
+<p>
+  <b>Processo:</b>
+  <%= @conformidade.processo %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%= @conformidade.data %>
+</p>
+
+<p>
+  <b>Valor:</b>
+  <%= @conformidade.valor %>
+</p>
+
+<p>
+  <b>Observacao:</b>
+  <%= @conformidade.observacao %>
+</p>
+
+<p>
+  <b>Fornecedor:</b>
+  <%= @conformidade.fornecedor.nome %>
+</p>
+
+
+<%= link_to 'Edit', edit_conformidade_path(@conformidade) %> |
+<%= link_to 'Back', conformidades_path %>

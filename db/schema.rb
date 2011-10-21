@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111017120036) do
+ActiveRecord::Schema.define(:version => 20111021104347) do
+
+  create_table "conformidades", :force => true do |t|
+    t.string   "caixa"
+    t.string   "processo"
+    t.date     "data"
+    t.text     "observacao"
+    t.decimal  "valor",         :precision => 2, :scale => 9
+    t.integer  "fornecedor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "fornecedores", :force => true do |t|
     t.string   "cnpj"
